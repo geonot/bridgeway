@@ -27,14 +27,16 @@
   if (header) {
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (!id || id === '#' || id === '#top' || id.length < 2) return;
-        const target = document.querySelector(id);
+        const href = a.getAttribute('href');
+        if (!href || href === '#' || href === '#top') return;
+        
+        const target = document.querySelector(href);
         if (!target) return;
+        
         e.preventDefault();
         
-        // Get accurate header height including padding
-        const headerHeight = header.offsetHeight;
+        // Get computed header height
+        const headerHeight = header.getBoundingClientRect().height;
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = targetPosition - headerHeight - 20; // 20px extra padding
         
@@ -45,7 +47,7 @@
         
         // Update URL without triggering scroll
         if (history.pushState) {
-          history.pushState(null, null, id);
+          history.pushState(null, null, href);
         }
       });
     });
