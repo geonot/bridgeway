@@ -1,7 +1,4 @@
-<!doctype     <meta property="og:image" content="bridge-nobg.png" />
-    <meta name="theme-color" content="#2a2a2a" />
-    <link rel="icon" href="bridge-nobg.png" />
-    <link rel="preload" as="image" href="bridge-nobg.png" />>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,11 +8,13 @@
     <meta property="og:title" content="Bridgeway Counseling — Lauren Ruocco, MA, LMHC" />
     <meta property="og:description" content="Compassionate, evidence-based therapy serving Gig Harbor and the South Puget Sound area." />
     <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo-nobg.png" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/bridge-nobg.png', _external=True) }}" />
     <meta name="theme-color" content="#2a2a2a" />
-  <link rel="icon" href="logo-nobg.png" />
-  <link rel="preload" as="image" href="logo-nobg.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="{{ url_for('static', filename='images/bridge-nobg.png') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/bridge-nobg.png') }}" />
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/bridge-nobg.png') }}" />
+    <link rel="preload" as="image" href="{{ url_for('static', filename='images/bridge-nobg.png') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -23,7 +22,7 @@
     <header class="site-header" role="banner">
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Bridgeway Counseling home">
-          <img src="bridge-nobg.png" alt="Bridgeway Counseling logo" width="64" height="64" />
+          <img src="{{ url_for('static', filename='images/bridge-nobg.png') }}" alt="Bridgeway Counseling logo" width="64" height="64" />
           <span class="brand-text">
             <strong>Bridgeway Counseling</strong>
             <span class="tag">Lauren Ruocco, MA, LMHC</span>
@@ -65,7 +64,7 @@
             </div>
             <div class="hero-visual" aria-hidden="true">
               <div class="hero-card">
-                <img src="selfie.jpg" alt="Portrait of Lauren Ruocco, MA, LMHC" />
+                <img src="{{ url_for('static', filename='images/selfie.jpg') }}" alt="Portrait of Lauren Ruocco, MA, LMHC" />
                 <div class="ring"></div>
                 <div class="glow"></div>
               </div>
@@ -79,20 +78,23 @@
           <div>
             <h2>About Lauren</h2>
             <p>
-              Life is a journey of constant growth and change. But sometimes, we hit a point where the path forward
-              feels unclear, and we feel stuck, uncertain, or overwhelmed. I believe we all have the strength to
-              navigate these moments, and my role is to offer the guidance and support to help you find your way.
+              I completed my counseling training through the University of Colorado Denver's culturally responsive program. 
+              I started my counseling career in the schools. This work developed my skills in mediation, career interests 
+              and executive functioning skills work. Since transitioning into private practice and having the opportunity 
+              to delve more deeply with clients into their challenges I have specialized in anxiety, depression and life transitions.
             </p>
             <p>
-              You don’t have to navigate this alone. If you're ready to move from feeling stuck to feeling empowered,
-              I invite you to reach out for a free consultation.
+              I sincerely love the work that I do and am so honored to be a part of the positive changes my clients find 
+              in themselves and make in their lives.
             </p>
           </div>
           <div class="card">
             <ul class="list">
               <li><strong>Credentials:</strong> MA, LMHC (Licensed Mental Health Counselor)</li>
               <li><strong>License:</strong> State of Washington / LH 61367551</li>
-              <li><strong>Education:</strong> University of Colorado Denver, MA in Counseling (2016)</li>
+              <li><strong>Education:</strong></li>
+              <li style="margin-left: 1.5rem;">• Masters Degree in Counseling, University of Colorado Denver (2016)</li>
+              <li style="margin-left: 1.5rem;">• Bachelors Degree in Psychology and Philosophy, University of Northern Colorado (2009)</li>
               <li><strong>Location:</strong> Gig Harbor & South Puget Sound (WA)</li>
               <li><strong>Format:</strong> Online/telehealth sessions</li>
               <li><strong>Populations:</strong> Teens, adults, elders (65+), individuals, couples, families</li>
@@ -104,17 +106,21 @@
 
       <section id="challenges" class="section alt">
         <div class="container">
-          <h2>Common Challenges</h2>
-          <p>Are you or your family experiencing one of these challenges?</p>
+          <h2>Focus Areas</h2>
+          <p>I work with adults and teens through a solution-focused and strength-based lens. My work focuses on:</p>
           <div class="card">
             <ul class="list">
-              <li>Navigating the heavy weight of grief or loss.</li>
-              <li>Struggling to find effective coping strategies for stress and anxiety.</li>
-              <li>Feeling overwhelmed by challenges with focus, organization, or motivation (executive functioning).</li>
-              <li>Supporting a child or teen through social challenges or school difficulties.</li>
-              <li>Seeking a deeper sense of self‑discovery and purpose in your own life.</li>
-              <li>Wanting to incorporate mindfulness to feel more present and calm.</li>
+              <li><strong>Anxiety & Panic:</strong> Developing coping strategies and reducing avoidance patterns.</li>
+              <li><strong>Depression:</strong> Building self-esteem, boosting motivation, and finding emotional regulation.</li>
+              <li><strong>Life Transitions:</strong> Making difficult decisions, processing grief through anticipated or unanticipated changes or loss, and taking steps to find your new normal or pursue your own best life.</li>
+              <li><strong>Self-Discovery:</strong> Unlocking authenticity by clarifying values and aligning decisions accordingly.</li>
+              <li><strong>Relationship Skills:</strong> Improving boundaries, attachment styles, self-advocacy, and conflict resolution.</li>
+              <li><strong>Executive Functioning:</strong> Enhancing focus, organization, motivation, and career exploration.</li>
             </ul>
+            <p style="margin-top: 1rem; font-style: italic;">
+              Transitions and change are inevitable as we navigate our lives, and they can sometimes cause significant 
+              inner turmoil or conflict, bringing up unresolved issues from our past.
+            </p>
           </div>
         </div>
       </section>
@@ -143,21 +149,22 @@
         <div class="container">
           <h2>Therapeutic Approach</h2>
           <p>
-            As a former school counselor, I have a unique understanding of the pressures faced by children, teens,
-            and their families. My approach is solution‑focused, meaning our work together will be collaborative and
-            forward‑looking. We won’t just talk about the problems; we will actively build on your strengths to
-            develop practical skills and create the positive changes you want to see in your life.
+            In our work together, I guide clients in self-discovery, helping them recognize patterns in their thoughts 
+            and behaviors. Together, we develop strategies to evaluate which patterns are constructive and how to adapt 
+            those that are not. My work emphasizes self-esteem and self-love, unlocking authenticity by clarifying values 
+            and aligning decisions accordingly.
+          </p>
+          <p>
+            I take a personalized, multidisciplinary approach, offering practical skills to take away while also exploring 
+            deeper issues and healing. Areas of focus may include boundaries, attachment styles, intrusive thoughts, 
+            self-advocacy, relationship and conflict skills, panic coping strategies, emotional regulation, reducing 
+            avoidance, boosting motivation and executive functioning, and exploring career interests.
           </p>
           <div class="grid three-cols">
             <div class="pill">Cognitive Behavioral (CBT)</div>
             <div class="pill">Solution Focused Brief (SFBT)</div>
-            <div class="pill">Dialectical Behavior (DBT)</div>
             <div class="pill">Strength‑Based</div>
             <div class="pill">Person‑Centered</div>
-            <div class="pill">Culturally Sensitive</div>
-            <div class="pill">Positive Psychology</div>
-            <div class="pill">Adlerian</div>
-            <div class="pill">Biofeedback</div>
           </div>
           <p style="margin-top: 1.5rem;"><em>"I take a personalized, multidisciplinary approach, offering practical skills to take away while also exploring deeper issues and healing."</em></p>
         </div>
@@ -228,13 +235,11 @@
             <div class="contact-cards">
               <div class="card">
                 <h3>Email</h3>
-                <!-- Update the email address below -->
                 <p><a id="contact-email" href="mailto:ruocco.counseling@gmail.com?subject=Therapy inquiry — Bridgeway Counseling">ruocco.counseling@gmail.com</a></p>
               </div>
               <div class="card">
                 <h3>Phone</h3>
-                <!-- Update the phone number below -->
-                <p><a id="contact-phone" href="tel:+1-253-262-0337">(253) 223-9797</a></p>
+                <p><a id="contact-phone" href="tel:+1-253-223-9797">(253) 223-9797</a></p>
               </div>
             </div>
             <p class="fineprint">If this is an emergency, call 911 or go to your nearest emergency room.</p>
@@ -243,7 +248,7 @@
             <h3>Service Area</h3>
             <p>Gig Harbor and the South Puget Sound area. Telehealth available across Washington State.</p>
             <div class="mini-hero">
-              <img src="bridge-nobg.png" alt="Bridgeway logo watermark" />
+              <img src="{{ url_for('static', filename='images/bridge-nobg.png') }}" alt="Bridgeway logo watermark" />
             </div>
           </div>
         </div>
@@ -253,7 +258,7 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <div class="brand tiny">
-          <img src="bridge-nobg.png" alt="Bridgeway Counseling logo" width="48" height="48" />
+          <img src="{{ url_for('static', filename='images/bridge-nobg.png') }}" alt="Bridgeway Counseling logo" width="48" height="48" />
           <div class="brand-text">
             <strong>Bridgeway Counseling</strong>
             <span class="tag">Lauren Ruocco, MA, LMHC</span>
@@ -270,9 +275,9 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Bridgeway Counseling",
-          "image": "bridge-nobg.png",
+        "image": "{{ url_for('static', filename='images/bridge-nobg.png', _external=True) }}",
         "areaServed": ["Gig Harbor", "South Puget Sound", "Washington"],
-        "url": "",
+        "url": "{{ request.url_root }}",
         "founder": {
           "@type": "Person",
           "name": "Lauren Ruocco",
@@ -280,6 +285,6 @@
         }
       }
     </script>
-    <script src="script.js" defer></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
   </body>
-  </html>
+</html>
