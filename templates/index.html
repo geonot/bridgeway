@@ -265,6 +265,17 @@
             <span class="tag">Lauren Ruocco, MA, LMHC</span>
           </div>
         </div>
+        
+        <div class="footer-contact">
+          <h3 style="font-size: 1rem; margin-bottom: 0.75rem; color: var(--text);">Contact Information</h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>Phone:</strong> <a href="tel:+1-253-223-9797" style="color: var(--brand-2); text-decoration: none;">(253) 223-9797</a></li>
+            <li><strong>Fax:</strong> (253) 357-0975</li>
+            <li><strong>Email:</strong> <a href="mailto:ruocco.counseling@gmail.com" style="color: var(--brand-2); text-decoration: none;">ruocco.counseling@gmail.com</a></li>
+            <li><strong>Address:</strong> P.O. Box 636, Burley, WA 98322</li>
+          </ul>
+        </div>
+        
         <div class="legal">
           <span>&copy; <span id="year"></span> Bridgeway Counseling. All rights reserved.</span>
         </div>
@@ -279,6 +290,17 @@
         "image": "{{ url_for('static', filename='images/bridge-nobg.png', _external=True) }}",
         "areaServed": ["Gig Harbor", "South Puget Sound", "Washington"],
         "url": "{{ request.url_root }}",
+        "telephone": "+1-253-223-9797",
+        "faxNumber": "+1-253-357-0975",
+        "email": "ruocco.counseling@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "postOfficeBoxNumber": "636",
+          "addressLocality": "Burley",
+          "addressRegion": "WA",
+          "postalCode": "98322",
+          "addressCountry": "US"
+        },
         "founder": {
           "@type": "Person",
           "name": "Lauren Ruocco",
