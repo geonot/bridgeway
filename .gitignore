@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask
+instance/
+.webassets-cache
+
+# Environment variables
+.env
+.env.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Original files (keep Flask structure only)
+# Uncomment these after initial migration:
+# index.html
+# styles.css
+# script.js
+
+# Keep only necessary images in static/images/
+# Remove duplicates after migration
+
+# Zip files
+*.zip
