@@ -24,34 +24,44 @@
 
   // Smooth scroll offset for sticky header (progressive enhancement)
   const header = document.querySelector('.site-header');
-  if (header) {
-    document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (!href || href === '#' || href === '#top') return;
-        
-        const target = document.querySelector(href);
-        if (!target) return;
-        
-        e.preventDefault();
-        
-        // Get computed header height
-        const headerHeight = header.getBoundingClientRect().height;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = targetPosition - headerHeight - 20; // 20px extra padding
-        
-        window.scrollTo({ 
-          top: offsetPosition, 
-          behavior: 'smooth' 
-        });
-        
-        // Update URL without triggering scroll
-        if (history.pushState) {
-          history.pushState(null, null, href);
-        }
-      });
+  
+  // Add click handlers to all anchor links
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    
+    const href = link.getAttribute('href');
+    if (!href || href === '#' || href === '#top') return;
+    
+    const target = document.getElementById(href.substring(1)) || document.querySelector(href);
+    if (!target) return;
+    
+    e.preventDefault();
+    
+    // Get header height
+    const headerHeight = header ? header.getBoundingClientRect().height : 80;
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = targetPosition - headerHeight - 20;
+    
+    // Smooth scroll
+    window.scrollTo({ 
+      top: offsetPosition, 
+      behavior: 'smooth' 
     });
-  }
+    
+    // Update URL
+    if (history.pushState) {
+      history.pushState(null, null, href);
+    }
+    
+    // Close mobile menu if open
+    const nav = document.getElementById('site-nav');
+    const toggle = document.querySelector('.nav-toggle');
+    if (nav && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
   // Color extraction from logo -> set CSS variables
   function extractPaletteFromImage(src, { samples = 4000, k = 5 } = {}) {
