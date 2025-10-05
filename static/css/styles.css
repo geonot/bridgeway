@@ -63,7 +63,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem; /* Increased for sticky header + padding */
 }
 
 html, body { 
